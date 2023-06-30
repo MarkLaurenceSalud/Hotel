@@ -6,11 +6,51 @@ package hotel.reservation.system;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
 /**
  *
  * @author Mark
  */
+
+class MainPage extends JFrame implements ActionListener{
+    
+    
+    JComboBox cb1, cb2;
+    JLabel l1;
+    
+  MainPage(){
+    setResizable(false);
+    setLayout(null);
+    setDefaultCloseOperation(EXIT_ON_CLOSE);
+    
+     l1 = new JLabel("Hello Client");
+     l1.setBounds(710, 20, 100, 30);
+     l1.setFont(new Font("Times New Roman", Font.BOLD, 15));
+     add(l1);
+       
+     String[] Booking = {"Booking","Add Booking","My Booking"};
+     cb1 = new JComboBox(Booking); 
+     cb1.setBounds(20, 20, 100, 30);
+     cb1.addActionListener(this);
+     add(cb1);
+     
+     String[] Exit = {"Exit","Logout"};
+     cb2 = new JComboBox(Exit); 
+     cb2.setBounds(150, 20, 100, 30);
+     cb2.addActionListener(this);
+     add(cb2);
+     
+      
+  }
+
+    @Override
+    public void actionPerformed(ActionEvent ae) {
+       if(ae.getSource()==cb1){
+        
+       }
+    }
+}
 
 class SignUp extends JFrame{
     
@@ -70,6 +110,7 @@ public class Login extends JFrame{
     
     Login(){
         setLayout(null);
+        setResizable(false);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         
         l1 = new JLabel("Login");
@@ -113,8 +154,13 @@ public class Login extends JFrame{
             public void actionPerformed(ActionEvent ae){
                if(t1.getText().toString().equals("admin")&& t2.getText().toString().equals("admin"))
                {
-                  
-                   l2.setText("Welcome Costumer");
+                   
+                   dispose();
+                   MainPage mp = new MainPage();
+                   mp.setVisible(true);
+                   mp.setBounds(500, 200, 1080, 720);
+                   
+                   
                }
                else
                    l2.setText("Invalid Username or Password");
@@ -127,6 +173,7 @@ public class Login extends JFrame{
             dispose();
             SignUp s = new SignUp();
             s.setVisible(true);
+            s.setResizable(false);
             s.setBounds(400, 200, 500, 300);
            }           
         });              
