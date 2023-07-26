@@ -10,8 +10,7 @@ package hotel.reservation.system;
  */
 public class Main {
     public static void main(String[] args) {
-         Login l = new Login();
-         l.setVisible(true);
-         l.setBounds(400, 200, 500, 300);
+         Login L = new Login();   
+         L.setVisible(true);
     }
 }
