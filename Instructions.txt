@@ -1,0 +1,37 @@
+Hotel Reservation Management System
+
+SQL instructions:
+
+create database hotelmanagementsystem;
+
+CREATE TABLE login (
+  ID` INT NOT NULL AUTO_INCREMENT,
+  username` VARCHAR(45) NULL,
+  password` VARCHAR(45) NULL,
+  PRIMARY KEY (`ID`));
+
+CREATE TABLE booking(
+  ID` INT NOT NULL AUTO_INCREMENT,
+  checkindate VARCHAR(45) NULL,
+  checkoutdate VARCHAR(45) NULL,
+  numberofpeople VARCHAR(45) NULL,
+  roomtype VARCHAR(45) NULL,
+  PRIMARY KEY (`ID`));
+
+CREATE TABLE personaldata (
+  ID` INT NOT NULL AUTO_INCREMENT,
+  name VARCHAR(45) NULL,
+  phone VARCHAR(45) NULL,
+  email VARCHAR(45) NULL,
+  address VARCHAR(45) NULL,
+  city VARCHAR(45) NULL,
+  nationality VARCHAR(45) NULL,
+  PRIMARY KEY (`ID`));
+
+insert into login (username, password)
+values ("test","test"), ("test2","test2"), ("test3","test3");
+
+
+Select * from login;
+INSERT INTO login;
+DELETE FROM booking;
